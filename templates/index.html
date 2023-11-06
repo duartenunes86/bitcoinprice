@@ -5,14 +5,14 @@
     <title>Execute Script</title>
     <meta name="csrf-token" content="{{ csrf_token }}">
 </head>
-<body><h1>Astrology App</h1>
-    Date of birth
+<body><h1>Bitcoin price prediction</h1>
+
+    <h3>Made with the formula created by Leo Heart, based on a model that analyzed Bitcoin price for more than 10 years Check <a href="https://www.linkedin.com/pulse/mathematical-formula-bitcoin-price-leo-heart/">here</a></a></h3>
+    Date 
     Day<input id="day"></input>
     Month<input id="month"></input>
     Year<input id="year"></input>
-    Hour(0-24)<input id="hour"></input>
-    Minutes(0-59)<input id="minutes"></input>
-
+    
     <button id="execute-script">Execute Script</button>
     <div id="result"></div>
 
@@ -22,8 +22,7 @@
             const day = document.getElementById('day').value;
             const month = document.getElementById('month').value;
             const year = document.getElementById('year').value;
-            const hour = document.getElementById('hour').value;
-            const minutes = document.getElementById('minutes').value;
+            
             
            fetch('/run_script/', {
         method: 'POST',
@@ -35,8 +34,7 @@
             day: day,
             month: month,
             year: year,
-            hour: hour,
-            minutes: minutes
+            
         })
     })
     .then(response => response.text())

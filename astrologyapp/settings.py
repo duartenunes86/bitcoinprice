@@ -29,9 +29,10 @@ DEBUG = True
 
 import os
 
-ALLOWED_HOSTS = ['bitcoin-price1.onrender.com', '127.0.0.1']
+# ALLOWED_HOSTS = ['bitcoin-price1.onrender.com', '127.0.0.1']
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+
 
 
 # Application definition
